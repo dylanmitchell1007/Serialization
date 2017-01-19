@@ -9,21 +9,27 @@ using System.Xml.Serialization;
 
 namespace Serialize
 {
-    class DataSerialization
-    {
-        private static object serilaizer;
+    class DataSerialization <T>
+    { 
 
-        public static void Serialize(string fileName T data)
+        public static void Serialize(string fileName, T data)
         {
-            XmlSerializer serilize = new XmlSerializer(typeof(T));
+            XmlSerializer serialize = new XmlSerializer(typeof(T));
             TextWriter writter = new StreamWriter(@"..\..\SavedFiles\"+ fileName + ".xml");
-            serilaizer.Serialize(writter, data);
+            serialize.Serialize(writter, data);
 
             writter.Close();
 
-
         }
 
+        public static T Deserialize(string fileName)
+        {
+            T data;
 
+            XmlSerializer serializer = new XmlSerializer(typeof(T));
+
+            TextReader reader = new StreamReader(@"..\")
+
+        }
     }
 }

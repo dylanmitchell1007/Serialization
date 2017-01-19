@@ -11,17 +11,32 @@ namespace Serialization
        
        private string mName;
        private int mAge;
-       private string mID;
+       private int mID;
 
         public Student(){ }
 
-        public Student(string student, int a, string)
+        public Student(string name, int age, int id)
         {
+            mName = name;
+            mAge = age;
+            mID = id;
 
         }
-
-        public string Name;
-        public string AGE;
-        public string ID;
+        
+        public string Name
+        {
+            get { return mName; }
+            set { mName = value; }
+        }
+        public int AGE
+        {
+            get { return mAge; }
+            set { mAge = value; }
+        }
+        public int ID
+        {
+            get { return mID; }
+            set { mID = value; }
+        }
     }
 }
